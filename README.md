@@ -28,10 +28,13 @@ let predicate = CNContact.predicateForContacts(matchingName: "Appleseed")
 let keysToFetch: [String] = [.givenName, .familyName]
 let publisher = store.unifiedContactsPublisher(matching: predicate,
                                                keysToFetch: keysToFetch)
-publisher.map { contacts in
+publisher
+    .map { contacts in
         contacts.map { $0.givenName + " " + $0.familyName }
-    }.sink(receiveCompletion: { completion in
+    }
+    .sink(receiveCompletion: { completion in
         if case let .failure(error) = completion {
+            // Handle error
             debugPrint(error)
         }
     }) { contacts in
