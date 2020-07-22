@@ -102,8 +102,8 @@ extension CNMutableContact {
 //    }
 //
 //
-    public func phoneNumber(_ value: String, label: CNPhoneNumberLabel = .home) -> CNMutableContact {
-        let phoneNumber = CNLabeledValue(label: label.rawValue,
+    public func phoneNumber(_ value: String, label: CNPhoneNumberLabel? = nil) -> CNMutableContact {
+        let phoneNumber = CNLabeledValue(label: label?.rawValue,
                                          value: CNPhoneNumber(stringValue: value))
         self.phoneNumbers.append(phoneNumber)
         return self
