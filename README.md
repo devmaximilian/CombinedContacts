@@ -3,6 +3,9 @@
 A Combine wrapper for the Contacts framework. 
 
 ```swift
+import Contacts
+import CombinedContacts
+
 // Create a mutable contact to add to the contact store
 let contact = CNMutableContact()
     .givenName("John")
@@ -27,6 +30,9 @@ store.add(contact) // -> SaveRequestPublisher
 ```
 
 ```swift
+import Contacts
+import CombinedContacts
+
 let store = CNContactStore()
 let predicate = CNContact.predicateForContacts(matchingName: "Appleseed")
 let keysToFetch: [String] = [.givenName, .familyName]
