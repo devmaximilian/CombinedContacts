@@ -181,7 +181,7 @@ extension CNMutableContact {
         return self
     }
 
-    public func socialProfile(_ value: CNSocialProfile, service: CNSocialProfileServiceLabel) -> CNMutableContact {
+    public func socialProfile(_ value: CNSocialProfile, service: CNSocialProfileService) -> CNMutableContact {
         let socialProfile = CNLabeledValue<CNSocialProfile>(label: service.rawValue,
                                                             value: value)
         self.socialProfiles.append(socialProfile)

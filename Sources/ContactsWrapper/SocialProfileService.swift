@@ -1,42 +1,42 @@
 import Foundation
 import Contacts
 
-public struct CNSocialProfileServiceLabel {
+public struct CNSocialProfileService {
     public var rawValue: String
     
-    public static var facebook: CNSocialProfileServiceLabel {
+    public static var facebook: CNSocialProfileService {
         return .init(CNSocialProfileServiceFacebook)
     }
     
-    public static var flickr: CNSocialProfileServiceLabel {
+    public static var flickr: CNSocialProfileService {
         return .init(CNSocialProfileServiceFlickr)
     }
     
-    public static var linkedIn: CNSocialProfileServiceLabel {
+    public static var linkedIn: CNSocialProfileService {
         return .init(CNSocialProfileServiceLinkedIn)
     }
     
-    public static var mySpace: CNSocialProfileServiceLabel {
+    public static var mySpace: CNSocialProfileService {
         return .init(CNSocialProfileServiceMySpace)
     }
     
-    public static var sinaWeibo: CNSocialProfileServiceLabel {
+    public static var sinaWeibo: CNSocialProfileService {
         return .init(CNSocialProfileServiceSinaWeibo)
     }
     
-    public static var tencentWeibo: CNSocialProfileServiceLabel {
+    public static var tencentWeibo: CNSocialProfileService {
         return .init(CNSocialProfileServiceTencentWeibo)
     }
     
-    public static var twitter: CNSocialProfileServiceLabel {
+    public static var twitter: CNSocialProfileService {
         return .init(CNSocialProfileServiceTwitter)
     }
     
-    public static var yelp: CNSocialProfileServiceLabel {
+    public static var yelp: CNSocialProfileService {
         return .init(CNSocialProfileServiceYelp)
     }
     
-    public static var gameCenter: CNSocialProfileServiceLabel {
+    public static var gameCenter: CNSocialProfileService {
         return .init(CNSocialProfileServiceGameCenter)
     }
     
