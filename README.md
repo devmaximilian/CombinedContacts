@@ -51,3 +51,9 @@ publisher
         debugPrint(contacts)
     }
 ```
+
+### Disclaimer
+
+This package utilizes the `Combine` and `Contacts` framework, both of which are property of Apple Inc.
+
+CombinedContacts is an independent open source effort and has not been authorized, sponsored, or otherwise approved by Apple Inc.
