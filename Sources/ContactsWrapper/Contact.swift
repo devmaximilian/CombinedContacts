@@ -187,8 +187,16 @@ extension CNMutableContact {
         self.socialProfiles.append(socialProfile)
         return self
     }
-//
-//    public func instantMessageAddresses(_ value: [CNLabeledValue<CNInstantMessageAddress>]) -> CNMutableContact {
-//
-//    }
+    
+    public func birthday(_ value: DateComponents) -> CNMutableContact {
+        self.birthday = value
+        return self
+    }
+
+    public func instantMessageAddress(_ value: CNInstantMessageAddress, service: CNInstantMessageService) -> CNMutableContact {
+        let instantMessageAddress = CNLabeledValue<CNInstantMessageAddress>(label: service.rawValue,
+                                                    value: value)
+        self.instantMessageAddresses.append(instantMessageAddress)
+        return self
+    }
 }
