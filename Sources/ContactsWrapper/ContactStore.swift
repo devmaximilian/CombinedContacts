@@ -106,26 +106,54 @@ extension CNContactStore {
     
     // MARK: Save
     
-    public func add(_ contact: CNMutableContact, toContainerWithIdentifier containerIdentifier: String? = nil) -> SaveRequestPublisher {
+    /// Returns a publisher that wraps a request to add a contact to the contact store.
+    ///
+    /// The publisher publishes the request result upon completion, or terminates if the request fails with an error.
+    /// - Parameters:
+    ///   - contact: The new contact to add.
+    ///   - identifier: The container identifier to add the contact to. Set to nil for the default container.
+    /// - Returns: A publisher that wraps a request to add a new contact to the contact store.
+    public func add(_ contact: CNMutableContact, toContainerWithIdentifier identifier: String? = nil) -> SaveRequestPublisher {
         let saveRequest = CNSaveRequest()
-        saveRequest.add(contact, toContainerWithIdentifier: containerIdentifier)
+        saveRequest.add(contact, toContainerWithIdentifier: identifier)
         return execute(request: saveRequest)
     }
     
-    public func save(_ group: CNMutableGroup, toContainerWithIdentifier containerIdentifier: String? = nil) -> SaveRequestPublisher {
+    /// Returns a publisher that wraps a request to add a group to the contact store.
+    ///
+    /// The publisher publishes the request result upon completion, or terminates if the request fails with an error.
+    /// - Parameters:
+    ///   - group: The new group to add.
+    ///   - identifier: The container identifier to add the group to. Set to nil for the default container.
+    /// - Returns: A publisher that wraps a request to add a group to the contact store.
+    public func save(_ group: CNMutableGroup, toContainerWithIdentifier identifier: String? = nil) -> SaveRequestPublisher {
         let saveRequest = CNSaveRequest()
-        saveRequest.add(group, toContainerWithIdentifier: containerIdentifier)
+        saveRequest.add(group, toContainerWithIdentifier: identifier)
         return execute(request: saveRequest)
     }
     
     // MARK: Add member
     
+    /// Returns a publisher that wraps a request to add a contact to a group.
+    ///
+    /// The publisher publishes the request result upon completion, or terminates if the request fails with an error.
+    /// - Parameters:
+    ///   - contact: The member to add to the group.
+    ///   - group: The group to add the member to.
+    /// - Returns: A publisher that wraps a request to add a contact to a group.
     public func addMember(_ contact: CNContact, to group: CNGroup) -> SaveRequestPublisher {
         let saveRequest = CNSaveRequest()
         saveRequest.addMember(contact, to: group)
         return execute(request: saveRequest)
     }
     
+    /// Returns a publisher that wraps a request to add a subgroup to a group.
+    ///
+    /// The publisher publishes the request result upon completion, or terminates if the request fails with an error.
+    /// - Parameters:
+    ///   - subgroup: The subgroup to add to the group.
+    ///   - group: The group to add the subgroup to.
+    /// - Returns: A publisher that wraps a request to add a subgroup to a group.
     public func addSubgroup(_ subgroup: CNGroup, to group: CNGroup) -> SaveRequestPublisher {
         let saveRequest = CNSaveRequest()
         saveRequest.addSubgroup(subgroup, to: group)
@@ -134,12 +162,22 @@ extension CNContactStore {
     
     // MARK: Update
     
+    /// Returns a publisher that wraps a request to update a contact in the contact store.
+    ///
+    /// The publisher publishes the request result upon completion, or terminates if the request fails with an error.
+    /// - Parameter contact: The updated contact.
+    /// - Returns: A publisher that wraps a request to update a contact in the contact store.
     public func update(_ contact: CNMutableContact) -> SaveRequestPublisher {
         let saveRequest = CNSaveRequest()
         saveRequest.update(contact)
         return execute(request: saveRequest)
     }
     
+    /// Returns a publisher that wraps a request to update a group in the contact store.
+    ///
+    /// The publisher publishes the request result upon completion, or terminates if the request fails with an error.
+    /// - Parameter group: The updated group.
+    /// - Returns: A publisher that wraps a request to update a group in the contact store.
     public func update(_ group: CNMutableGroup) -> SaveRequestPublisher {
         let saveRequest = CNSaveRequest()
         saveRequest.update(group)
@@ -148,12 +186,22 @@ extension CNContactStore {
     
     // MARK: Delete
     
+    /// Returns a publisher that wraps a request to delete a contact in the contact store.
+    ///
+    /// The publisher publishes the request result upon completion, or terminates if the request fails with an error.
+    /// - Parameter contact: The contact to delete.
+    /// - Returns: A publisher that wraps a request to delete a contact in the contact store.
     public func delete(_ contact: CNMutableContact) -> SaveRequestPublisher {
         let saveRequest = CNSaveRequest()
         saveRequest.delete(contact)
         return execute(request: saveRequest)
     }
     
+    /// Returns a publisher that wraps a request to delete a group in the contact store.
+    ///
+    /// The publisher publishes the request result upon completion, or terminates if the request fails with an error.
+    /// - Parameter contact: The group to delete.
+    /// - Returns: A publisher that wraps a request to delete a group in the contact store.
     public func delete(_ group: CNMutableGroup) -> SaveRequestPublisher {
         let saveRequest = CNSaveRequest()
         saveRequest.delete(group)
@@ -162,12 +210,26 @@ extension CNContactStore {
     
     // MARK: Remove member
     
+    /// Returns a publisher that wraps a request to remove a contact from a group.
+    ///
+    /// The publisher publishes the request result upon completion, or terminates if the request fails with an error.
+    /// - Parameters:
+    ///   - contact: The member to remove from the group.
+    ///   - group: The group to remove the member from.
+    /// - Returns: A publisher that wraps a request to remove a contact from a group.
     public func removeMember(_ contact: CNContact, to group: CNGroup) -> SaveRequestPublisher {
         let saveRequest = CNSaveRequest()
         saveRequest.removeMember(contact, from: group)
         return execute(request: saveRequest)
     }
     
+    /// Returns a publisher that wraps a request to remove a subgroup from a group.
+    ///
+    /// The publisher publishes the request result upon completion, or terminates if the request fails with an error.
+    /// - Parameters:
+    ///   - contact: The subgroup to remove from the group.
+    ///   - group: The group to remove the subgroup from.
+    /// - Returns: A publisher that wraps a request to remove a subgroup from a group.
     public func removeSubgroup(_ subgroup: CNGroup, to group: CNGroup) -> SaveRequestPublisher {
         let saveRequest = CNSaveRequest()
         saveRequest.removeSubgroup(subgroup, from: group)
