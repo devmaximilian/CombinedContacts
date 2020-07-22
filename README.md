@@ -1,6 +1,6 @@
-# ContactsWrapper
+# Combined Contacts
 
-A description of this package.
+A Combine wrapper for the Contacts framework. 
 
 ```swift
 // Create a mutable contact to add to the contact store
