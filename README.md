@@ -21,3 +21,20 @@ let contact = CNMutableContact()
         DateComponents(year: 1988, month: 4, day: 1)
     )
 ```
+
+```swift
+let store = CNContactStore()
+let predicate = CNContact.predicateForContacts(matchingName: "Appleseed")
+let keysToFetch: [String] = [.givenName, .familyName]
+let publisher = store.unifiedContactsPublisher(matching: predicate,
+                                               keysToFetch: keysToFetch)
+publisher.map { contacts in
+        contacts.map { $0.givenName + " " + $0.familyName }
+    }.sink(receiveCompletion: { completion in
+        if case let .failure(error) = completion {
+            debugPrint(error)
+        }
+    }) { contacts in
+        debugPrint(contacts)
+    }
+```
