@@ -8,51 +8,6 @@
 import Foundation
 import Contacts
 
-func test() {
-    // Create a mutable object to add to the contact
-    let contact = CNMutableContact()
-
-    // Store the profile picture as data
-//    let image = UIImage(systemName: "person.crop.circle")
-//    contact.imageData = image?.jpegData(compressionQuality: 1.0)
-
-    contact.givenName = "John"
-    contact.familyName = "Appleseed"
-
-    let homeEmail = CNLabeledValue(label: CNLabelHome, value: "john@example.com" as NSString)
-    let workEmail = CNLabeledValue(label: CNLabelWork, value: "j.appleseed@icloud.com" as NSString)
-    contact.emailAddresses = [homeEmail, workEmail]
-
-    contact.phoneNumbers = [CNLabeledValue(
-        label: CNLabelPhoneNumberiPhone,
-        value: CNPhoneNumber(stringValue: "(408) 555-0126"))]
-
-    let homeAddress = CNMutablePostalAddress()
-    homeAddress.street = "One Apple Park Way"
-    homeAddress.city = "Cupertino"
-    homeAddress.state = "CA"
-    homeAddress.postalCode = "95014"
-    contact.postalAddresses = [CNLabeledValue(label: CNLabelHome, value: homeAddress)]
-
-    var birthday = DateComponents()
-    birthday.day = 1
-    birthday.month = 4
-    birthday.year = 1988  // (Optional) Omit the year value for a yearless birthday
-    contact.birthday = birthday
-
-    // Save the newly created contact
-    let store = CNContactStore()
-    let saveRequest = CNSaveRequest()
-    saveRequest.add(contact, toContainerWithIdentifier: nil)
-
-    do {
-        try store.execute(saveRequest)
-    } catch {
-        print("Saving contact failed, error: \(error)")
-        // Handle the error
-    }
-}
-
 extension CNMutableContact {
     public func contactType(_ value: CNContactType) -> CNMutableContact {
         self.contactType = value
