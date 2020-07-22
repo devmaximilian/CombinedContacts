@@ -58,6 +58,7 @@ extension CNMutableContact {
         self.contactType = value
         return self
     }
+    
     public func namePrefix(_ value: String) -> CNMutableContact {
         self.namePrefix = value
         return self
