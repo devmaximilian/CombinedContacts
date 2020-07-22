@@ -3,5 +3,5 @@ import XCTest
 import ContactsWrapperTests
 
 var tests = [XCTestCaseEntry]()
-tests += ContactsWrapperTests.allTests()
+tests += CombinedContactsTests.allTests()
 XCTMain(tests)
