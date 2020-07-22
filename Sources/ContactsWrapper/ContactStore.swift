@@ -14,7 +14,7 @@ extension CNContactStore {
     /// - Returns: A publisher that wraps a unified contacts fetch request.
     public func unifiedContactsPublisher(
         matching predicate: NSPredicate,
-        keysToFetch keys: [CNKeyDescriptor]
+        keysToFetch keys: [String]
     ) -> UnifiedContactsPublisher {
         return Future { completion in
             self.requestAccess(for: .contacts) { (authorized, error) in
@@ -31,7 +31,7 @@ extension CNContactStore {
                     
                     let contacts = try self.unifiedContacts(
                         matching: predicate,
-                        keysToFetch: keys
+                        keysToFetch: keys as [CNKeyDescriptor]
                     )
                     
                     completion(
