@@ -2,6 +2,8 @@
 
 A Combine wrapper for the Contacts framework. 
 
+Supports iOS 13, macOS 10.15 or later. OOTB support for OpenCombine may be considered if requested.
+
 ```swift
 import Contacts
 import CombinedContacts
