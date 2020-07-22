@@ -20,6 +20,10 @@ let contact = CNMutableContact()
     .birthday(
         DateComponents(year: 1988, month: 4, day: 1)
     )
+
+// Add contact to contact store
+let store = CNContactStore()
+store.add(contact) // -> SaveRequestPublisher
 ```
 
 ```swift
