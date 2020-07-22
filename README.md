@@ -8,7 +8,7 @@ let contact = CNMutableContact()
     .givenName("John")
     .familyName("Appleseed")
     .email("john@example.com", label: .home)
-    .email(".appleseed@icloud.com", label: .work)
+    .email("j.appleseed@icloud.com", label: .work)
     .phoneNumber("(408) 555-0126", label: .iPhone)
     .postalAddress(
         CNMutablePostalAddress()
