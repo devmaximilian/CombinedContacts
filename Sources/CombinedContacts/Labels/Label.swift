@@ -30,7 +30,7 @@
 import Foundation
 import Contacts
 
-internal protocol CNLabel {
+public protocol CNLabel {
     var rawValue: String { get }
     
     init(_ string: String)
@@ -42,7 +42,7 @@ extension CNLabel {
     }
 }
 
-internal protocol CNContactLabel: CNLabel {}
+public protocol CNContactLabel: CNLabel {}
 
 extension CNContactLabel {
     public static var home: Self {

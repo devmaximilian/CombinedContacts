@@ -1,5 +1,5 @@
 //
-//  Labels/PhoneNumber.swift
+//  Labels/PostalAddress.swift
 //  CombinedContacts
 //
 //  Created by Maximilian Wendel on 2020-07-23.
@@ -31,37 +31,9 @@ import Foundation
 import Contacts
 
 extension CNLabels {
-    public struct PhoneNumber: CNContactLabel {
+    public struct PostalAddress: CNContactLabel {
         public var rawValue: String
-        
-        public static var iPhone: Self {
-            return .init(CNLabelPhoneNumberiPhone)
-        }
-        
-        public static var main: Self {
-            return .init(CNLabelPhoneNumberMain)
-        }
-        
-        public static var mobile: Self {
-            return .init(CNLabelPhoneNumberMobile)
-        }
-        
-        public static var homeFax: Self {
-            return .init(CNLabelPhoneNumberHomeFax)
-        }
-        
-        public static var workFax: Self {
-            return .init(CNLabelPhoneNumberWorkFax)
-        }
-        
-        public static var otherFax: Self {
-            return .init(CNLabelPhoneNumberOtherFax)
-        }
-        
-        public static var pager: Self {
-            return .init(CNLabelPhoneNumberPager)
-        }
-        
+                
         public init(_ string: String) {
             self.rawValue = string
         }

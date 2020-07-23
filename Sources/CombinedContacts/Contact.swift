@@ -113,52 +113,42 @@ extension CNMutableContact {
         self.note = value
         return self
     }
-//
-//
-//    public func imageData(_ value: Data?) -> CNMutableContact {
-//
-//    }
-//
-//    public func thumbnailImageData(_ value: Data?) -> CNMutableContact {
-//
-//    }
-//
-//
-    public func phoneNumber(_ value: String, label: CNPhoneNumberLabel? = nil) -> CNMutableContact {
+    
+    public func phoneNumber(_ value: String, label: CNLabels.PhoneNumber? = nil) -> CNMutableContact {
         let phoneNumber = CNLabeledValue(label: label?.rawValue,
                                          value: CNPhoneNumber(stringValue: value))
         self.phoneNumbers.append(phoneNumber)
         return self
     }
 
-    public func emailAddress(_ value: String, label: CNLabel = .home) -> CNMutableContact {
-        let emailAddress = CNLabeledValue(label: label.rawValue,
+    public func emailAddress(_ value: String, label: CNLabels.Email? = nil) -> CNMutableContact {
+        let emailAddress = CNLabeledValue(label: label?.rawValue,
                                           value: value as NSString)
         self.emailAddresses.append(emailAddress)
         return self
     }
 
-    public func postalAddress(_ value: CNMutablePostalAddress, label: CNLabel = .home) -> CNMutableContact {
-        let postalAddress = CNLabeledValue<CNPostalAddress>(label: label.rawValue, value: value)
+    public func postalAddress(_ value: CNMutablePostalAddress, label: CNLabels.PostalAddress? = nil) -> CNMutableContact {
+        let postalAddress = CNLabeledValue<CNPostalAddress>(label: label?.rawValue, value: value)
         self.postalAddresses.append(postalAddress)
         return self
     }
 
-    public func urlAddress(_ value: String, label: CNLabel = .home) -> CNMutableContact {
-        let urlAddress = CNLabeledValue(label: label.rawValue,
+    public func urlAddress(_ value: String, label: CNLabels.URLAddress? = nil) -> CNMutableContact {
+        let urlAddress = CNLabeledValue(label: label?.rawValue,
                                         value: value as NSString)
         self.urlAddresses.append(urlAddress)
         return self
     }
 
-    public func contactRelation(_ value: String, relation: Self) -> CNMutableContact {
+    public func contactRelation(_ value: String, relation: CNLabels.Relation) -> CNMutableContact {
         let contactRelation = CNLabeledValue(label: relation.rawValue,
                                                                 value: CNContactRelation(name: value))
         self.contactRelations.append(contactRelation)
         return self
     }
 
-    public func socialProfile(_ value: CNSocialProfile, service: CNSocialProfileService) -> CNMutableContact {
+    public func socialProfile(_ value: CNSocialProfile, service: CNServices.SocialProfile) -> CNMutableContact {
         let socialProfile = CNLabeledValue<CNSocialProfile>(label: service.rawValue,
                                                             value: value)
         self.socialProfiles.append(socialProfile)
@@ -170,10 +160,26 @@ extension CNMutableContact {
         return self
     }
 
-    public func instantMessageAddress(_ value: CNInstantMessageAddress, service: CNInstantMessageService) -> CNMutableContact {
+    public func instantMessageAddress(_ value: CNInstantMessageAddress, service: CNServices.InstantMessage) -> CNMutableContact {
         let instantMessageAddress = CNLabeledValue<CNInstantMessageAddress>(label: service.rawValue,
                                                     value: value)
         self.instantMessageAddresses.append(instantMessageAddress)
         return self
     }
+}
+
+// MARK: - Not implemented
+
+extension CNMutableContact {
+    //
+    //
+    //    public func imageData(_ value: Data?) -> CNMutableContact {
+    //
+    //    }
+    //
+    //    public func thumbnailImageData(_ value: Data?) -> CNMutableContact {
+    //
+    //    }
+    //
+    //
 }

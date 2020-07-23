@@ -1,5 +1,5 @@
 //
-//  Labels/InstantMessageService.swift
+//  Services/SocialProfile.swift
 //  CombinedContacts
 //
 //  Created by Maximilian Wendel on 2020-07-23.
@@ -30,51 +30,47 @@
 import Foundation
 import Contacts
 
-extension CNLabels {
-    public struct InstantMessageService: CNLabel {
-        internal var rawValue: String
-        
-        public static var aim: Self {
-            return .init(CNInstantMessageServiceAIM)
-        }
+extension CNServices {
+    public struct SocialProfile: CNService {
+        public var rawValue: String
         
         public static var facebook: Self {
-            return .init(CNInstantMessageServiceFacebook)
+            return .init(CNSocialProfileServiceFacebook)
         }
         
-        public static var gaduGadu: Self {
-            return .init(CNInstantMessageServiceGaduGadu)
+        public static var flickr: Self {
+            return .init(CNSocialProfileServiceFlickr)
         }
         
-        public static var googleTalk: Self {
-            return .init(CNInstantMessageServiceGoogleTalk)
+        public static var linkedIn: Self {
+            return .init(CNSocialProfileServiceLinkedIn)
         }
         
-        public static var icq: Self {
-            return .init(CNInstantMessageServiceICQ)
+        public static var mySpace: Self {
+            return .init(CNSocialProfileServiceMySpace)
         }
         
-        public static var jabber: Self {
-            return .init(CNInstantMessageServiceJabber)
+        public static var sinaWeibo: Self {
+            return .init(CNSocialProfileServiceSinaWeibo)
         }
         
-        public static var msn: Self {
-            return .init(CNInstantMessageServiceMSN)
+        public static var tencentWeibo: Self {
+            return .init(CNSocialProfileServiceTencentWeibo)
         }
         
-        public static var qq: Self {
-            return .init(CNInstantMessageServiceQQ)
+        public static var twitter: Self {
+            return .init(CNSocialProfileServiceTwitter)
         }
         
-        public static var skype: Self {
-            return .init(CNInstantMessageServiceSkype)
+        public static var yelp: Self {
+            return .init(CNSocialProfileServiceYelp)
         }
         
-        public static var yahoo: Self {
-            return .init(CNInstantMessageServiceYahoo)
+        public static var gameCenter: Self {
+            return .init(CNSocialProfileServiceGameCenter)
         }
         
-        internal init(_ string: String) {
+        public init(_ string: String) {
             self.rawValue = string
         }
     }

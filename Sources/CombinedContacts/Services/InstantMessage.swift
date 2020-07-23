@@ -1,5 +1,5 @@
 //
-//  Labels/SocialProfileService.swift
+//  Services/InstantMessage.swift
 //  CombinedContacts
 //
 //  Created by Maximilian Wendel on 2020-07-23.
@@ -30,47 +30,51 @@
 import Foundation
 import Contacts
 
-extension CNLabels {
-    public struct SocialProfileService: CNLabel {
-        internal var rawValue: String
+extension CNServices {
+    public struct InstantMessage: CNService {
+        public var rawValue: String
         
-        public static var facebook: SocialProfileService {
-            return .init(CNSocialProfileServiceFacebook)
+        public static var aim: Self {
+            return .init(CNInstantMessageServiceAIM)
         }
         
-        public static var flickr: SocialProfileService {
-            return .init(CNSocialProfileServiceFlickr)
+        public static var facebook: Self {
+            return .init(CNInstantMessageServiceFacebook)
         }
         
-        public static var linkedIn: SocialProfileService {
-            return .init(CNSocialProfileServiceLinkedIn)
+        public static var gaduGadu: Self {
+            return .init(CNInstantMessageServiceGaduGadu)
         }
         
-        public static var mySpace: SocialProfileService {
-            return .init(CNSocialProfileServiceMySpace)
+        public static var googleTalk: Self {
+            return .init(CNInstantMessageServiceGoogleTalk)
         }
         
-        public static var sinaWeibo: SocialProfileService {
-            return .init(CNSocialProfileServiceSinaWeibo)
+        public static var icq: Self {
+            return .init(CNInstantMessageServiceICQ)
         }
         
-        public static var tencentWeibo: SocialProfileService {
-            return .init(CNSocialProfileServiceTencentWeibo)
+        public static var jabber: Self {
+            return .init(CNInstantMessageServiceJabber)
         }
         
-        public static var twitter: SocialProfileService {
-            return .init(CNSocialProfileServiceTwitter)
+        public static var msn: Self {
+            return .init(CNInstantMessageServiceMSN)
         }
         
-        public static var yelp: SocialProfileService {
-            return .init(CNSocialProfileServiceYelp)
+        public static var qq: Self {
+            return .init(CNInstantMessageServiceQQ)
         }
         
-        public static var gameCenter: SocialProfileService {
-            return .init(CNSocialProfileServiceGameCenter)
+        public static var skype: Self {
+            return .init(CNInstantMessageServiceSkype)
         }
         
-        internal init(_ string: String) {
+        public static var yahoo: Self {
+            return .init(CNInstantMessageServiceYahoo)
+        }
+        
+        public init(_ string: String) {
             self.rawValue = string
         }
     }

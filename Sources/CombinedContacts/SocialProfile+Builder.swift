@@ -1,5 +1,5 @@
 //
-//  SocialProfile.swift
+//  SocialProfile+Builder.swift
 //  CombinedContacts
 //
 //  Created by Maximilian Wendel on 2020-07-23.
