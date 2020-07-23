@@ -2,7 +2,18 @@
 
 A Combine wrapper for the Contacts framework. 
 
-Supports iOS 13, macOS 10.15 or later. OOTB support for OpenCombine may be considered if requested.
+![Swift 5.2](https://img.shields.io/badge/Swift-5.2-orange)
+![Swift Package Manager](https://img.shields.io/badge/SwiftPM-compatible-brightgreen)
+![Platforms](https://img.shields.io/badge/Platforms-iOS%20+%20macOS-blue)
+![GitHub issues](https://img.shields.io/github/issues-raw/devmaximilian/combined-contacts)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/devmaximilian/combined-contacts)
+
+### Requirements
+
+- iOS 13 (or macOS 10.15)
+- Swift 5.2
+
+### Example usage
 
 ```swift
 import Contacts
