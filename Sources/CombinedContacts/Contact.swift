@@ -151,7 +151,7 @@ extension CNMutableContact {
         return self
     }
 
-    public func contactRelation(_ value: String, relation: CNContactRelationLabel) -> CNMutableContact {
+    public func contactRelation(_ value: String, relation: Self) -> CNMutableContact {
         let contactRelation = CNLabeledValue(label: relation.rawValue,
                                                                 value: CNContactRelation(name: value))
         self.contactRelations.append(contactRelation)

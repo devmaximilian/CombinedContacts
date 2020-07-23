@@ -30,46 +30,48 @@
 import Foundation
 import Contacts
 
-public struct CNSocialProfileService {
-    public var rawValue: String
-    
-    public static var facebook: CNSocialProfileService {
-        return .init(CNSocialProfileServiceFacebook)
-    }
-    
-    public static var flickr: CNSocialProfileService {
-        return .init(CNSocialProfileServiceFlickr)
-    }
-    
-    public static var linkedIn: CNSocialProfileService {
-        return .init(CNSocialProfileServiceLinkedIn)
-    }
-    
-    public static var mySpace: CNSocialProfileService {
-        return .init(CNSocialProfileServiceMySpace)
-    }
-    
-    public static var sinaWeibo: CNSocialProfileService {
-        return .init(CNSocialProfileServiceSinaWeibo)
-    }
-    
-    public static var tencentWeibo: CNSocialProfileService {
-        return .init(CNSocialProfileServiceTencentWeibo)
-    }
-    
-    public static var twitter: CNSocialProfileService {
-        return .init(CNSocialProfileServiceTwitter)
-    }
-    
-    public static var yelp: CNSocialProfileService {
-        return .init(CNSocialProfileServiceYelp)
-    }
-    
-    public static var gameCenter: CNSocialProfileService {
-        return .init(CNSocialProfileServiceGameCenter)
-    }
-    
-    public init(_ string: String) {
-        self.rawValue = string
+extension CNLabels {
+    public struct SocialProfileService: CNLabel {
+        public var rawValue: String
+        
+        public static var facebook: SocialProfileService {
+            return .init(CNSocialProfileServiceFacebook)
+        }
+        
+        public static var flickr: SocialProfileService {
+            return .init(CNSocialProfileServiceFlickr)
+        }
+        
+        public static var linkedIn: SocialProfileService {
+            return .init(CNSocialProfileServiceLinkedIn)
+        }
+        
+        public static var mySpace: SocialProfileService {
+            return .init(CNSocialProfileServiceMySpace)
+        }
+        
+        public static var sinaWeibo: SocialProfileService {
+            return .init(CNSocialProfileServiceSinaWeibo)
+        }
+        
+        public static var tencentWeibo: SocialProfileService {
+            return .init(CNSocialProfileServiceTencentWeibo)
+        }
+        
+        public static var twitter: SocialProfileService {
+            return .init(CNSocialProfileServiceTwitter)
+        }
+        
+        public static var yelp: SocialProfileService {
+            return .init(CNSocialProfileServiceYelp)
+        }
+        
+        public static var gameCenter: SocialProfileService {
+            return .init(CNSocialProfileServiceGameCenter)
+        }
+        
+        internal init(_ string: String) {
+            self.rawValue = string
+        }
     }
 }

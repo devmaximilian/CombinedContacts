@@ -30,50 +30,52 @@
 import Foundation
 import Contacts
 
-public struct CNInstantMessageService {
-    public var rawValue: String
-    
-    public static var aim: CNInstantMessageService {
-        return .init(CNInstantMessageServiceAIM)
-    }
-    
-    public static var facebook: CNInstantMessageService {
-        return .init(CNInstantMessageServiceFacebook)
-    }
-    
-    public static var gaduGadu: CNInstantMessageService {
-        return .init(CNInstantMessageServiceGaduGadu)
-    }
-    
-    public static var googleTalk: CNInstantMessageService {
-        return .init(CNInstantMessageServiceGoogleTalk)
-    }
-    
-    public static var icq: CNInstantMessageService {
-        return .init(CNInstantMessageServiceICQ)
-    }
-    
-    public static var jabber: CNInstantMessageService {
-        return .init(CNInstantMessageServiceJabber)
-    }
-    
-    public static var msn: CNInstantMessageService {
-        return .init(CNInstantMessageServiceMSN)
-    }
-    
-    public static var qq: CNInstantMessageService {
-        return .init(CNInstantMessageServiceQQ)
-    }
-    
-    public static var skype: CNInstantMessageService {
-        return .init(CNInstantMessageServiceSkype)
-    }
-    
-    public static var yahoo: CNInstantMessageService {
-        return .init(CNInstantMessageServiceYahoo)
-    }
-    
-    public init(_ string: String) {
-        self.rawValue = string
+extension CNLabels {
+    public struct InstantMessageService: CNLabel {
+        public var rawValue: String
+        
+        public static var aim: Self {
+            return .init(CNInstantMessageServiceAIM)
+        }
+        
+        public static var facebook: Self {
+            return .init(CNInstantMessageServiceFacebook)
+        }
+        
+        public static var gaduGadu: Self {
+            return .init(CNInstantMessageServiceGaduGadu)
+        }
+        
+        public static var googleTalk: Self {
+            return .init(CNInstantMessageServiceGoogleTalk)
+        }
+        
+        public static var icq: Self {
+            return .init(CNInstantMessageServiceICQ)
+        }
+        
+        public static var jabber: Self {
+            return .init(CNInstantMessageServiceJabber)
+        }
+        
+        public static var msn: Self {
+            return .init(CNInstantMessageServiceMSN)
+        }
+        
+        public static var qq: Self {
+            return .init(CNInstantMessageServiceQQ)
+        }
+        
+        public static var skype: Self {
+            return .init(CNInstantMessageServiceSkype)
+        }
+        
+        public static var yahoo: Self {
+            return .init(CNInstantMessageServiceYahoo)
+        }
+        
+        internal init(_ string: String) {
+            self.rawValue = string
+        }
     }
 }

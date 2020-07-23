@@ -1,8 +1,8 @@
 //
-//  Labels/Label.swift
+//  Labels/Email.swift
 //  CombinedContacts
 //
-//  Created by Maximilian Wendel on 2020-07-21.
+//  Created by Maximilian Wendel on 2020-07-23.
 //
 
 //  MIT License
@@ -30,37 +30,24 @@
 import Foundation
 import Contacts
 
-internal protocol CNLabel {
-    var rawValue: String { get }
-    
-    init(_ string: String)
-}
-
-extension CNLabel {
-    public static func custom(_ string: String) -> Self {
-        return .init(string)
+extension CNLabels {
+    public struct Email: CNContactLabel {
+        public var rawValue: String
+        
+        public static var iCloud: Self {
+            return .init(CNLabelEmailiCloud)
+        }
+        
+        public static var urlAddressHomePage: Self {
+            return .init(CNLabelURLAddressHomePage)
+        }
+        
+        public static func custom(_ label: String) -> Self {
+            return .init(label)
+        }
+        
+        internal init(_ string: String) {
+            self.rawValue = string
+        }
     }
 }
-
-internal protocol CNContactLabel: CNLabel {}
-
-extension CNContactLabel {
-    public static var home: Self {
-        return .init(CNLabelHome)
-    }
-    
-    public static var work: Self {
-        return .init(CNLabelWork)
-    }
-    
-    public static var school: Self {
-        return .init(CNLabelSchool)
-    }
-    
-    public static var other: Self {
-        return .init(CNLabelOther)
-    }
-}
-
-/// A namespace for label types
-public enum CNLabels {}
