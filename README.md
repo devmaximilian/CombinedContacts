@@ -15,6 +15,8 @@ A Combine wrapper for the Contacts framework.
 
 ### Example usage
 
+The following example demonstrates creating a contact and saving it to the contacts store.
+
 ```swift
 import Contacts
 import CombinedContacts
@@ -41,6 +43,8 @@ let contact = CNMutableContact()
 let store = CNContactStore()
 store.add(contact) // -> SaveRequestPublisher
 ```
+
+The following example demonstrates retrieving unified contacts matching a predicate.
 
 ```swift
 import Contacts
