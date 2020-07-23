@@ -32,10 +32,6 @@ import Contacts
 
 public struct CNInstantMessageService {
     public var rawValue: String
-
-    public static var assistant: CNInstantMessageService {
-        return .init(CNLabelContactRelationAssistant)
-    }
     
     public static var aim: CNInstantMessageService {
         return .init(CNInstantMessageServiceAIM)
