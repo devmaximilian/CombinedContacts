@@ -1,5 +1,5 @@
 //
-//  InstantMessageService.swift
+//  Labels/InstantMessageService.swift
 //  CombinedContacts
 //
 //  Created by Maximilian Wendel on 2020-07-23.
