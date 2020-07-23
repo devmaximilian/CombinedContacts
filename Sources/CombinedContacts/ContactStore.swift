@@ -82,6 +82,56 @@ extension CNContactStore {
 }
 
 extension CNContactStore {
+    public typealias UnifiedContactPublisher = AnyPublisher<CNContact, CNError>
+    
+    /// Returns a publisher that wraps a `CNContactStore` unified contact fetch request.
+    ///
+    /// The publisher publishes unified contact when the request completes, or terminates if the request fails with an error.
+    /// - Parameters:
+    ///   - predicate: The `NSPredicate` used to match contacts.
+    ///   - keys: `CNKeyDescriptor`s specifying the contact fields to retreive.
+    /// - Returns: A publisher that wraps a unified contact fetch request.
+    public func unifiedContactPublisher(
+        withIdentifier identifier: String,
+        keysToFetch keys: [String]
+    ) -> UnifiedContactPublisher {
+        return Future { completion in
+            self.requestAccess(for: .contacts) { (authorized, error) in
+                do {
+                    guard authorized else {
+                        // Attempt to cast error provided by authorization request
+                        if let error = error as? CNError {
+                            throw error
+                        }
+                        
+                        // Fallback to authorizationDenied
+                        throw CNError(.authorizationDenied)
+                    }
+                    
+                    let contact = try self.unifiedContact(
+                        withIdentifier: identifier,
+                        keysToFetch: keys as [CNKeyDescriptor]
+                    )
+                    
+                    completion(
+                        .success(contact)
+                    )
+                } catch {
+                    if let error = error as? CNError {
+                        completion(
+                            .failure(error)
+                        )
+                    } else {
+                        // This should never happen in practice.
+                        fatalError("Failed to cast error to CNError")
+                    }
+                }
+            }
+        }.eraseToAnyPublisher()
+    }
+}
+
+extension CNContactStore {
     public typealias RequestAccessPublisher = AnyPublisher<CNAuthorizationStatus, Error>
     
     /// Returns a publisher that wraps a `CNContactStore` authorization request.
