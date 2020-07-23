@@ -32,7 +32,7 @@ import Contacts
 
 extension CNLabels {
     public struct SocialProfileService: CNLabel {
-        public var rawValue: String
+        internal var rawValue: String
         
         public static var facebook: SocialProfileService {
             return .init(CNSocialProfileServiceFacebook)

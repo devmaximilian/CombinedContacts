@@ -32,7 +32,7 @@ import Contacts
 
 extension CNLabels {
     public struct Date: CNLabel {
-        public var rawValue: String
+        internal var rawValue: String
         
         public static var anniversary: Self {
             return .init(CNLabelDateAnniversary)

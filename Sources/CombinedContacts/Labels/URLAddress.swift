@@ -32,7 +32,7 @@ import Contacts
 
 extension CNLabels {
     public struct URLAddress: CNLabel {
-        public var rawValue: String
+        internal var rawValue: String
         
         public static var homePage: Self {
             return .init(CNLabelURLAddressHomePage)

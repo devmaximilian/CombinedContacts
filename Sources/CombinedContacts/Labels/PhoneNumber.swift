@@ -32,7 +32,7 @@ import Contacts
 
 extension CNLabels {
     public struct PhoneNumber: CNContactLabel {
-        public var rawValue: String
+        internal var rawValue: String
         
         public static var iPhone: Self {
             return .init(CNLabelPhoneNumberiPhone)

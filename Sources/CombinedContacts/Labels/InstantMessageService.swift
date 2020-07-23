@@ -32,7 +32,7 @@ import Contacts
 
 extension CNLabels {
     public struct InstantMessageService: CNLabel {
-        public var rawValue: String
+        internal var rawValue: String
         
         public static var aim: Self {
             return .init(CNInstantMessageServiceAIM)

@@ -32,7 +32,7 @@ import Contacts
 
 extension CNLabels {
     public struct Relation: CNLabel {
-        public var rawValue: String
+        internal var rawValue: String
         
         public static var assistant: Self {
             return .init(CNLabelContactRelationAssistant)

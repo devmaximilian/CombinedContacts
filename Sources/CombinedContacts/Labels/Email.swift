@@ -32,7 +32,7 @@ import Contacts
 
 extension CNLabels {
     public struct Email: CNContactLabel {
-        public var rawValue: String
+        internal var rawValue: String
         
         public static var iCloud: Self {
             return .init(CNLabelEmailiCloud)
