@@ -1,5 +1,5 @@
 //
-//  ContactRelationLabel.swift
+//  Labels/Relation.swift
 //  CombinedContacts
 //
 //  Created by Maximilian Wendel on 2020-07-23.
