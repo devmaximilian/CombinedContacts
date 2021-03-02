@@ -5,8 +5,8 @@ A Combine wrapper for the Contacts framework.
 ![Swift 5.2](https://img.shields.io/badge/Swift-5.2-orange)
 ![Swift Package Manager](https://img.shields.io/badge/SwiftPM-compatible-brightgreen)
 ![Platforms](https://img.shields.io/badge/Platforms-iOS%20+%20macOS-blue)
-![GitHub issues](https://img.shields.io/github/issues-raw/devmaximilian/combined-contacts)
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/devmaximilian/combined-contacts)
+![GitHub issues](https://img.shields.io/github/issues-raw/devmaximilian/CombinedContacts)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/devmaximilian/CombinedContacts)
 
 ### Requirements
 
